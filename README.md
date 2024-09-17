@@ -1,6 +1,6 @@
-# Rent a House Platform
+# RentHub Platform
 
-This project is a rental-focused real estate platform similar to Zillow, where users can list, search, and rent houses. The system is built with a microservices architecture and aims to provide a seamless experience for both property owners and tenants.
+This project is a rental-focused real estate platform, where users can list, search, and rent houses. The system is built with a microservices architecture and aims to provide a seamless experience for both property owners and tenants.
 
 ## Key Features
 
