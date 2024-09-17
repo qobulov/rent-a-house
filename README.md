@@ -1,6 +1,6 @@
-# Rent a House Backend
+# RentHub Backend
 
-This is the backend service for the "Rent a House" platform, which allows users to list, search, and book houses for rent. The project is designed using a microservices architecture.
+This is the backend service for the "RentHub" platform, which allows users to list, search, and book houses for rent. The project is designed using a microservices architecture.
 
 ## Tech Stack
 
