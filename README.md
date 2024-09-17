@@ -1,30 +1,43 @@
-# RentHub Backend
+# Rent a House Platform
 
-This is the backend service for the "RentHub" platform, which allows users to list, search, and book houses for rent. The project is designed using a microservices architecture.
+This project is a rental-focused real estate platform similar to Zillow, where users can list, search, and rent houses. The system is built with a microservices architecture and aims to provide a seamless experience for both property owners and tenants.
+
+## Key Features
+
+- **Property Listings**: Property owners can list their houses for rent, including details such as location, price, and amenities.
+- **Property Search**: Users can search for rental properties based on location, price range, and other filters.
+- **Map Integration**: View properties on an interactive map.
+- **Price Estimation**: Offers price comparisons and market trends for rental properties in the same area.
+- **User Profiles**: Both renters and landlords can manage their profiles, including booking history and listed properties.
+- **Reviews and Ratings**: Tenants can leave reviews and rate properties after their rental experience.
+- **Online Payments**: Secure payment integration for rent and deposits.
+- **Authentication and Security**: JWT-based authentication for secure user access.
 
 ## Tech Stack
 
-- **Golang**: For all microservices.
-- **gRPC**: Service-to-service communication.
-- **Protocol Buffers**: For defining service messages.
-- **PostgreSQL**: To store user-related data.
-- **MongoDB**: To store booking and service provider data.
-- **Gin Framework**: For API Gateway and routing.
-- **Database Migrations**: Using `golang-migrate` for schema versioning.
-- **Swagger**: For API documentation.
-- **JWT**: For user authentication and authorization.
-- **Redis**: For caching and session management.
-- **Docker & Docker Compose**: For containerization and local deployment.
-- **Kafka or RabbitMQ**: For asynchronous messaging between services.
-- **Casbin**: For role-based access control (RBAC).
+- **Golang**: Backend development and microservices.
+- **gRPC**: For internal communication between services.
+- **Protocol Buffers**: Service definitions.
+- **PostgreSQL**: To store user data.
+- **MongoDB**: To store property and booking data.
+- **Gin Framework**: API Gateway and routing.
+- **Redis**: Caching layer for optimizing performance.
+- **Docker & Docker Compose**: Containerization and local development.
+- **Kafka / RabbitMQ**: Message queue for asynchronous tasks.
+- **Casbin**: Role-based access control.
+- **Swagger**: API documentation.
+- **JWT**: Authentication and authorization management.
+- **Google Maps / Leaflet.js**: Map integration for property locations.
+- **Stripe / PayPal**: Secure online payment processing.
 
 ## Microservices
 
-1. **Auth Service**: Handles user registration, login, and JWT-based authentication.
-2. **House Listing Service**: Manages house listings, CRUD operations, and searching/filtering of houses.
-3. **Booking Service**: Manages house bookings, availability checks, and booking conflicts.
-4. **Payment Service** (Optional): Integrates payment gateway and handles transaction records.
-5. **API Gateway**: Routes incoming requests to appropriate microservices.
+1. **Auth Service**: Handles user registration, login, and JWT authentication.
+2. **Listing Service**: Manages property listings, CRUD operations, and property search.
+3. **Booking Service**: Manages house bookings, availability checks, and conflicts.
+4. **Review Service**: Manages property reviews and ratings.
+5. **Payment Service**: Integrates with Stripe or PayPal for handling rent and deposits.
+6. **API Gateway**: Routes incoming HTTP requests to the appropriate microservices.
 
 ## Getting Started
 
@@ -34,8 +47,8 @@ This is the backend service for the "RentHub" platform, which allows users to li
 - [PostgreSQL](https://www.postgresql.org/)
 - [MongoDB](https://www.mongodb.com/)
 - [Redis](https://redis.io/)
-- [Kafka](https://kafka.apache.org/) or [RabbitMQ](https://www.rabbitmq.com/)
 - [Docker](https://www.docker.com/)
+- [Kafka](https://kafka.apache.org/) or [RabbitMQ](https://www.rabbitmq.com/)
 
 ### Installation
 
@@ -46,7 +59,7 @@ This is the backend service for the "RentHub" platform, which allows users to li
     cd rent-a-house
     ```
 
-2. Initialize submodules for each microservice:
+2. Initialize submodules:
 
     ```bash
     git submodule init
@@ -59,34 +72,33 @@ This is the backend service for the "RentHub" platform, which allows users to li
     docker-compose up --build
     ```
 
-4. Migrate the database for each service:
+4. Migrate the databases for each service:
 
     ```bash
     cd auth-service && go run cmd/migrate.go
-    cd house-listing-service && go run cmd/migrate.go
+    cd listing-service && go run cmd/migrate.go
     ```
 
 ### API Documentation
 
-The API is documented using Swagger. Once the server is running, you can access the API docs at:
+API documentation is available through Swagger. Access it at:
 
 - **Auth Service**: `http://localhost:8080/swagger/index.html`
-- **House Listing Service**: `http://localhost:8081/swagger/index.html`
+- **Listing Service**: `http://localhost:8081/swagger/index.html`
 - **Booking Service**: `http://localhost:8082/swagger/index.html`
-
-### Service Communication
-
-Services communicate with each other using **gRPC** and are defined using **Protocol Buffers**. For asynchronous tasks like notifications and order processing, **Kafka** or **RabbitMQ** is used.
 
 ### Running Tests
 
-Run the following command to execute unit and integration tests:
+To run unit and integration tests, use the following command:
 
 ```bash
 go test ./...
 
-
 ### Project Structure
+```bash
+go test ./...
+
+
 .
 ├── cmd                # Entry points for each microservice
 ├── config             # Configuration files and environment setup
