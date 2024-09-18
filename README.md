@@ -4,7 +4,7 @@ This project is a rental-focused real estate platform, where users can list, sea
 
 ## Key Features
 
-- **Property Listings**: Property owners can list their houses for rent, including details such as location, price, and amenities.
+- **Property Accommodations**: Property owners can list their houses for rent, including details such as location, price, and amenities.
 - **Property Search**: Users can search for rental properties based on location, price range, and other filters.
 - **Map Integration**: View properties on an interactive map.
 - **Price Estimation**: Offers price comparisons and market trends for rental properties in the same area.
@@ -33,13 +33,9 @@ This project is a rental-focused real estate platform, where users can list, sea
 ## Microservices
 
 1. **Auth Service**: Handles user registration, login, and JWT authentication.
-2. **Listing Service**: Manages property listings, CRUD operations, and property search.
-3. **Booking Service**: Manages house bookings, availability checks, and conflicts.
-
-     *Review Service*: Manages property reviews and ratings.
-
-     *Payment Service*: Integrates with Stripe or PayPal for handling rent and deposits.
-6. **API Gateway**: Routes incoming HTTP requests to the appropriate microservices.
+2. **Accommodation Service**: Manages property Accommodations,house bookings, CRUD operations, and property search, availability checks, and conflicts.
+3. **PayRate Service**: Manages property reviews and ratings. Integrates with Stripe or PayPal for handling rent and deposits.
+4. **API Gateway**: Routes incoming HTTP requests to the appropriate microservices.
 
 ## Getting Started
 
@@ -78,7 +74,7 @@ This project is a rental-focused real estate platform, where users can list, sea
 
     ```bash
     cd auth-service && go run cmd/migrate.go
-    cd listing-service && go run cmd/migrate.go
+    cd Accommodation-service && go run cmd/migrate.go
     ```
 
 ### API Documentation
@@ -86,8 +82,8 @@ This project is a rental-focused real estate platform, where users can list, sea
 API documentation is available through Swagger. Access it at:
 
 - **Auth Service**: `http://localhost:8080/swagger/index.html`
-- **Listing Service**: `http://localhost:8081/swagger/index.html`
-- **Booking Service**: `http://localhost:8081/swagger/index.html`
+- **Accommodation Service**: `http://localhost:8081/swagger/index.html`
+- **PayRate Service**: `http://localhost:8081/swagger/index.html`
 
 ### Running Tests
 
