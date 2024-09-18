@@ -35,8 +35,8 @@ This project is a rental-focused real estate platform, where users can list, sea
 1. **Auth Service**: Handles user registration, login, and JWT authentication.
 2. **Listing Service**: Manages property listings, CRUD operations, and property search.
 3. **Booking Service**: Manages house bookings, availability checks, and conflicts.
-4. **Review Service**: Manages property reviews and ratings.
-5. **Payment Service**: Integrates with Stripe or PayPal for handling rent and deposits.
+     **Review Service**: Manages property reviews and ratings.
+     **Payment Service**: Integrates with Stripe or PayPal for handling rent and deposits.
 6. **API Gateway**: Routes incoming HTTP requests to the appropriate microservices.
 
 ## Getting Started
