@@ -87,7 +87,7 @@ API documentation is available through Swagger. Access it at:
 
 - **Auth Service**: `http://localhost:8080/swagger/index.html`
 - **Listing Service**: `http://localhost:8081/swagger/index.html`
-- **Booking Service**: `http://localhost:8082/swagger/index.html`
+- **Booking Service**: `http://localhost:8081/swagger/index.html`
 
 ### Running Tests
 
